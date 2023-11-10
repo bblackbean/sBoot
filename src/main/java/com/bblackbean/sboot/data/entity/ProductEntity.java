@@ -2,16 +2,20 @@ package com.bblackbean.sboot.data.entity;
 
 import lombok.*;
 
-//@Entity
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-//@Table(name = "product")
-public class ProcuctEntity {
+@Table(name = "product")
+public class ProductEntity {
 
-    //@Id
+    @Id // PK
     String productId;
     String productName;
     Integer productPrice;
