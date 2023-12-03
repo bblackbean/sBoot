@@ -2,6 +2,8 @@ package com.bblackbean.sboot.controller;
 
 import com.bblackbean.sboot.data.dto.ProductDto;
 import com.bblackbean.sboot.service.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/product-api")
 public class ProductController {
 
+    private final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
     private ProductService productService;
 
     @Autowired  // 자동으로 연결해줌 (new로 객체화하지 않아도 서비스에 생성되어있는 객체를 자동으로 끌어옴)
@@ -17,7 +20,16 @@ public class ProductController {
     // http://localhost:8080/api/v1/product-api/product/{productId}
     @GetMapping(value = "/product/{productId}")
     public ProductDto getProduct(@PathVariable String productId) {
-        return productService.getProduct(productId);
+
+        long startTime = System.currentTimeMillis();
+        LOGGER.info("[ProductController] perform {} of Bblackbean API.", "getProduct");
+
+        ProductDto productDto =  productService.getProduct(productId);
+
+        LOGGER.info("[ProductController] Response :: productId = {}, productName = {}, productPrice = {}, productStock = {}, Response Time = {}ms", productDto.getProductId(),
+                productDto.getProductName(), productDto.getProductPrice(), productDto.getProductStock(), (System.currentTimeMillis() - startTime));
+
+        return productDto;
     }
 
     // http://localhost:8080/api/v1/product-api/product
