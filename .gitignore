@@ -11,6 +11,10 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+target
+.idea
+.mvn
+application.properties
 
 # AWS User-specific
 .idea/**/aws.xml
@@ -168,3 +172,4 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,java,intellij
 /.idea/
+/mintty.2023-10-07_21-21-19.png
