@@ -1,10 +1,13 @@
 package com.bblackbean.sboot.controller;
 
+import com.bblackbean.sboot.common.Constants;
+import com.bblackbean.sboot.common.exception.BblackbeanException;
 import com.bblackbean.sboot.data.dto.ProductDto;
 import com.bblackbean.sboot.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -47,4 +50,9 @@ public class ProductController {
     // http://localhost:8080/api/v1/product-api/product/{productId}
     @DeleteMapping("/product/{productId}")
     public ProductDto deleteProduct(@PathVariable String productId) {return null;}
+
+    @PostMapping(value = "/product/exception")
+    public void exceptionTest() throws BblackbeanException {
+        throw new BblackbeanException(Constants.ExceptionClass.PRODUCT, HttpStatus.FORBIDDEN, "접근이 금지되었습니다.");
+    }
 }
