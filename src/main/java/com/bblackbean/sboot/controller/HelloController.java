@@ -54,4 +54,20 @@ public class HelloController {
 
         return new ResponseEntity<>(map, responseHeaders, httpStatus);
     }*/
+
+    // Jacoco 테스트용
+    public String hello(String name) {
+        switch (name){
+            case "hi":
+                return "nice to meet you";
+            case "bblack":
+                return "bean";
+            default:
+                return "hello method";
+        }
+    }
+
+    public String callBean() {
+        return "call Bean Class";
+    }
 }
