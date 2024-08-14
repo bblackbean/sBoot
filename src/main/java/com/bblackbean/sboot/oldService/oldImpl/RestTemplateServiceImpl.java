@@ -1,7 +1,7 @@
-package com.bblackbean.sboot.service.impl;
+package com.bblackbean.sboot.oldService.oldImpl;
 
-import com.bblackbean.sboot.dto.MemberDTO;
-import com.bblackbean.sboot.service.RestTemplateService;
+import com.bblackbean.sboot.oldDto.MemberDTO;
+import com.bblackbean.sboot.oldService.RestTemplateService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.RequestEntity;

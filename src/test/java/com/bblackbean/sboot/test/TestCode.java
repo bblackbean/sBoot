@@ -1,6 +1,6 @@
 package com.bblackbean.sboot.test;
 
-import com.bblackbean.sboot.controller.HelloController;
+import com.bblackbean.sboot.oldController.HelloController;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

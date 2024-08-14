@@ -1,4 +1,4 @@
-package com.bblackbean.sboot.dto;
+package com.bblackbean.sboot.oldDto;
 
 import lombok.Getter;
 import lombok.Setter;

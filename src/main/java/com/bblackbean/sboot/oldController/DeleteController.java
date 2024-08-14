@@ -1,4 +1,4 @@
-package com.bblackbean.sboot.controller;
+package com.bblackbean.sboot.oldController;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,7 +1,7 @@
-package com.bblackbean.sboot.controller;
+package com.bblackbean.sboot.oldController;
 
-import com.bblackbean.sboot.dto.MemberDTO;
-import com.bblackbean.sboot.service.RestTemplateService;
+import com.bblackbean.sboot.oldDto.MemberDTO;
+import com.bblackbean.sboot.oldService.RestTemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

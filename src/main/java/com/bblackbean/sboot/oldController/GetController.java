@@ -1,6 +1,6 @@
-package com.bblackbean.sboot.controller;
+package com.bblackbean.sboot.oldController;
 
-import com.bblackbean.sboot.dto.MemberDTO;
+import com.bblackbean.sboot.oldDto.MemberDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
