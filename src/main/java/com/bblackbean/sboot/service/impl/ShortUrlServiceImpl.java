@@ -51,21 +51,20 @@ public class ShortUrlServiceImpl implements ShortUrlService {
         String orgUrl;
         String shortUrl;
 
-        if (getShortUrlEntity == null) {
+        if (getShortUrlEntity == null) {    // 가져온 URL이 없으면...
             LOGGER.info("[getShortUrl] No Entity in Database.");
-            ResponseEntity<NaverUriDto> responseEntity =
-                requestShortUrl(clientId, clientSecret, originalUrl);
+            ResponseEntity<NaverUriDto> responseEntity = requestShortUrl(clientId, clientSecret, originalUrl);
 
             orgUrl = responseEntity.getBody().getResult().getOrgUrl();
             shortUrl = responseEntity.getBody().getResult().getUrl();
-            String hash = responseEntity.getBody().getResult().getHash();
+            /*String hash = responseEntity.getBody().getResult().getHash();
 
             ShortUrlEntity shortUrlEntity = new ShortUrlEntity();
             shortUrlEntity.setOrgUrl(orgUrl);
             shortUrlEntity.setUrl(shortUrl);
             shortUrlEntity.setHash(hash);
 
-            shortUrlDAO.saveShortUrl(shortUrlEntity);
+            shortUrlDAO.saveShortUrl(shortUrlEntity);*/
 
         } else {
             orgUrl = getShortUrlEntity.getOrgUrl();
